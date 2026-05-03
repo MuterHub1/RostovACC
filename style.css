@@ -1,0 +1,92 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #181818;
+    color: #E7E7E7;
+}
+
+
+.title {
+    text-align: center;
+}
+
+.watermark {
+    position: fixed;
+    right: 15px;
+    top: -5px;
+    font-size: 14px;
+}
+
+.watermark a {
+    color: #E7E7E7;
+}
+
+.sectors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent
+}
+
+.sectors svg {
+    height: 90vh;
+    max-height: 90vh;
+    width: 85vw;
+    max-width: 85vw;
+    stroke: #606060;
+    stroke-width: 1px;
+    transition: stroke-width 0.15 ease;
+}
+
+.sectors svg .sector {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.sectors svg:has(.sector:hover) .sector:not(:hover) {
+    opacity: 0.3;
+}
+
+.sectors svg .sector:hover {
+    opacity: 1;
+    stroke-width: 2px;
+}
+
+#tooltip-html {
+    position: fixed;
+    z-index: 1;
+    opacity: 0;
+    background: #181818;
+    color: #F1F1F1;
+    font-size: 15px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 2.5px solid #f1f1f1;
+    border-radius: 2.5 inset;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
+@media (max-width: 1080px) {
+    .watermark {
+        position: unset;
+        right: unset;
+        top: unset;
+        text-align: end;
+        margin-right: 15px;
+        margin-bottom: 0px;
+    }
+
+    .title {
+        margin-top: 0px;
+    }
+
+    .sectors svg .sector:hover {
+        stroke-width: 3px;
+    }
+}
